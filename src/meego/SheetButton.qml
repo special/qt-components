@@ -42,11 +42,12 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Button {
     id: root
 
-    property Style platformStyle: SheetButtonStyle {}
+    property QtObject platformStyle: StyleAPI.get("SheetButtonStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

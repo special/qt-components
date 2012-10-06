@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 BorderImage {
     id: button
@@ -49,7 +50,7 @@ BorderImage {
     property bool selected: false
     smooth: true
 
-    property Style platformStyle: EditBubbleButtonStyle {}
+    property QtObject platformStyle: StyleAPI.get("EditBubbleButtonStyle");
 
     width: label.width + platformStyle.buttonPaddingLeft +
            platformStyle.buttonPaddingRight +

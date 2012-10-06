@@ -116,12 +116,6 @@ CommonDialog {
             }
         }
 
-    // Style API
-    property Style platformStyle: SelectionDialogStyle {}
-
-    //Deprecated, TODO Remove this on w13
-    property alias style: root.platformStyle
-
     // private api
     property int __pressDelay: platformStyle.pressDelay
     property variant __selectedIndexesHash: []
@@ -180,10 +174,12 @@ CommonDialog {
             ScrollDecorator {
                 id: scrollDecorator
                 flickableItem: selectionListView
-                platformStyle.inverted: true
+                platformStyle: ScrollDecoratorStyle {
+                    inverted: true
+                }
             }
-            onCountChanged: selectionContent.listViewHeight = selectionListView.count * platformStyle.itemHeight
-            onModelChanged: selectionContent.listViewHeight = selectionListView.count * platformStyle.itemHeight
+            onCountChanged: selectionContent.listViewHeight = selectionListView.count * root.platformStyle.itemHeight
+            onModelChanged: selectionContent.listViewHeight = selectionListView.count * root.platformStyle.itemHeight
         }
 
     }

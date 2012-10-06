@@ -4,12 +4,13 @@ import "Utils.js" as Utils
 import "EditBubble.js" as Popup
 import "SelectionHandles.js" as Private
 import "Magnifier.js" as MagnifierPopup
+import "style.js" as StyleAPI
 
 Item {
     id: contents
 
     // Styling for the Label
-    property Style platformStyle: SelectionHandlesStyle{}
+    property QtObject platformStyle: StyleAPI.get("SelectionHandlesStyle");
 
     //Deprecated, TODO Remove this some day
     property alias style: contents.platformStyle

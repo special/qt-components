@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 AbstractMenu {
     id: root
@@ -51,15 +52,13 @@ AbstractMenu {
     property url icon
 
     // platformStyle API
-    property Style platformStyle: ContextMenuStyle{}
-    property Style style:         ContextMenuStyle{}
+    property QtObject platformStyle: StyleAPI.get("ContextMenuStyle");
 
     onPlatformTitleTextChanged: logDeprecatedMsg("platformTitleText")
     onTitleTextChanged:         logDeprecatedMsg("titleText")
     onPlatformIconChanged:      logDeprecatedMsg("platformIcon")
     onIconChanged:              logDeprecatedMsg("iconChanged")
     onPlatformStyleChanged:     logDeprecatedMsg("platformStyle")
-    onStyleChanged:             logDeprecatedMsg("style")
 
     function logDeprecatedMsg(name) {
         console.log("Warning: " + name + " is deprecated");

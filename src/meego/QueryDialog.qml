@@ -41,6 +41,7 @@
 import QtQuick 1.1
 import "." 1.0
 import "UIConstants.js" as UI
+import "style.js" as StyleAPI
 
 Dialog {
     id: root
@@ -67,7 +68,7 @@ Dialog {
     //ToDo
     property alias icon: iconImage.source
 
-    property Style platformStyle: QueryDialogStyle {}
+    property QtObject platformStyle: StyleAPI.get("QueryDialogStyle");
 
     //__centerContentField: true
 

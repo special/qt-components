@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Popup {
     id: root
@@ -53,7 +54,7 @@ Popup {
     signal accepted
     signal rejected
 
-    property Style platformStyle: DialogStyle {}
+    property QtObject platformStyle: StyleAPI.get("DialogStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

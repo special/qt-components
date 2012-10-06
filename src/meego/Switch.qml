@@ -39,6 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 1.1
+import "style.js" as StyleAPI
 
 /*
 Class: Switch
@@ -58,7 +59,7 @@ Item {
     property bool checked: false
 
     // Styling for the Switch
-    property Style platformStyle: SwitchStyle {}
+    property QtObject platformStyle: StyleAPI.get("SwitchStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

@@ -42,6 +42,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Item {
     id: root
@@ -56,10 +57,10 @@ Item {
     signal clicked
 
     // Styling for the ToolItem
-    property Style platformStyle: ToolItemStyle{}
+    property QtObject platformStyle: StyleAPI.get("ToolItemStyle");
 
     // TODO: deprecated
-    property Style style: root.platformStyle
+    property alias style: root.platformStyle
 
     Image {
         source: mouseArea.pressed ? platformStyle.pressedBackground : ""

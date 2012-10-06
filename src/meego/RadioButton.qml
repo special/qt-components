@@ -39,11 +39,12 @@
 ****************************************************************************/
 
 import QtQuick 1.1
+import "style.js" as StyleAPI
 
 CheckBox {
     id: radioButton
 
-    property Style platformStyle: RadioButtonStyle{}
+    property QtObject platformStyle: StyleAPI.get("RadioButtonStyle");
     property alias style: radioButton.platformStyle
 
     __imageSource: !radioButton.enabled ? platformStyle.backgroundDisabled :

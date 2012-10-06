@@ -39,6 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 1.1
+import "style.js" as StyleAPI
 
 Item {
     id: root
@@ -50,7 +51,7 @@ Item {
     width: wrapper.width
     height: wrapper.height
 
-    property Style platformStyle: SectionScrollerStyle {}
+    property QtObject platformStyle: StyleAPI.get("SectionScrollerStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

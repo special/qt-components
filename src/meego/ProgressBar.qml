@@ -42,6 +42,7 @@ import QtQuick 1.1
 import "." 1.0
 import Qt.labs.components 1.1
 
+import "style.js" as StyleAPI
 import "Utils.js" as Utils
 
 ImplicitSizeItem {
@@ -53,7 +54,7 @@ ImplicitSizeItem {
     property bool indeterminate: false
 
     // Styling for the ProgressBar
-    property Style platformStyle: ProgressBarStyle{}
+    property QtObject platformStyle: StyleAPI.get("ProgressBarStyle");
 
     //Deprecated, can be removed on W13
     property alias style: container.platformStyle

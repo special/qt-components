@@ -41,6 +41,7 @@
 import QtQuick 1.1
 import "." 1.0
 import "UIConstants.js" as UI
+import "style.js" as StyleAPI
 
 /**
   * Class: ScrollDecorator
@@ -68,7 +69,7 @@ Item {
 
     property bool __alwaysShowIndicator: true
 
-    property Style platformStyle: ScrollDecoratorStyle{}
+    property QtObject platformStyle: StyleAPI.get("ScrollDecoratorStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

@@ -40,13 +40,14 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Dialog {
     id: genericDialog
 
     property string titleText: ""
 
-    property Style platformStyle: SelectionDialogStyle {}
+    property QtObject platformStyle: StyleAPI.get("SelectionDialogStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: genericDialog.platformStyle

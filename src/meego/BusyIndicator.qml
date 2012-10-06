@@ -43,6 +43,7 @@ import "." 1.0
 
 import "UIConstants.js" as UI
 import "Utils.js" as Utils
+import "style.js" as StyleAPI
 
 // ### Display Entered / Exited! Pause animation when not "on display".
 // ### LayoutDirection
@@ -52,7 +53,7 @@ ImplicitSizeItem {
 
     property bool running: false
 
-    property Style platformStyle: BusyIndicatorStyle{}
+    property QtObject platformStyle: StyleAPI.get("BusyIndicatorStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

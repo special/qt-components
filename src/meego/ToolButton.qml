@@ -52,7 +52,7 @@ Button {
     property QtObject platformStyle: ToolButtonStyle { backgroundVisible: !toolButton.flat}
 
     //Deprecated item, REMOVE THIS
-    property QtObject style: toolButton.platformStyle
+    property alias style: toolButton.platformStyle
 
     implicitWidth: platformStyle.buttonWidth
     implicitHeight: platformStyle.buttonHeight

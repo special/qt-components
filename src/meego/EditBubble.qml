@@ -42,6 +42,7 @@ import QtQuick 1.1
 import "." 1.0
 import "Utils.js" as Utils
 import "EditBubble.js" as Private
+import "style.js" as StyleAPI
 
 Item {
     id: bubble
@@ -50,7 +51,7 @@ Item {
 
     property alias privateRect: rect
 
-    property Style platformStyle: EditBubbleStyle {}
+    property QtObject platformStyle: StyleAPI.get("EditBubbleStyle");
 
     property variant position: Qt.point(0,0)
 

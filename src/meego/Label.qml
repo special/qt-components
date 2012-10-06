@@ -40,14 +40,14 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Text {
     id: root
 
     // Common public API
     // Styling for the Label
-    property Style platformStyle: LabelStyle{}
-
+    property QtObject platformStyle: StyleAPI.get("LabelStyle");
 
     font.family: platformStyle.fontFamily
     font.pixelSize: platformStyle.fontPixelSize

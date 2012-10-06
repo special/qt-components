@@ -46,6 +46,7 @@ import "EditBubble.js" as Popup
 import "TextAreaHelper.js" as TextAreaHelper
 import "Magnifier.js" as MagnifierPopup
 import "SelectionHandles.js" as SelectionHandles
+import "style.js" as StyleAPI
 
 FocusScope {
     id: root
@@ -79,7 +80,7 @@ FocusScope {
     property bool platformEnableEditBubble: true
     property bool platformEnableMagnifier: true
 
-    property QtObject platformStyle: TextAreaStyle {}
+    property QtObject platformStyle: StyleAPI.get("TextAreaStyle");
     property alias style: root.platformStyle
 
     property alias platformPreedit: inputMethodObserver.preedit

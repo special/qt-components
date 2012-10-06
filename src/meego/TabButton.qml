@@ -40,13 +40,14 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Button {
     id: tabButton
 
     // Common public API
     property Item tab
-    property QtObject platformStyle: TabButtonStyle {}
+    property QtObject platformStyle: StyleAPI.get("TabButtonStyle");
     
     //Deprecated: TODO, remove this! 
     property alias style: tabButton.platformStyle

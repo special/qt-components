@@ -42,6 +42,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Item {
     id: root
@@ -55,7 +56,7 @@ Item {
     property int privateVisibility: ToolBarVisibility.Visible
 
     // Styling for the ToolBar
-    property Style platformStyle: ToolBarStyle {}
+    property QtObject platformStyle: StyleAPI.get("ToolBarStyle");
 
     // Deprecated, TODO remove
     property alias style: root.platformStyle

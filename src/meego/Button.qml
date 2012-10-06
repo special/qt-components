@@ -41,6 +41,7 @@
 import QtQuick 1.1
 import "." 1.0
 import "UIConstants.js" as UI
+import "style.js" as StyleAPI
 
 ImplicitSizeItem {
     id: button
@@ -59,7 +60,7 @@ ImplicitSizeItem {
     property string __buttonType
 
     // Styling for the Button
-    property Style platformStyle: ButtonStyle {}
+    property QtObject platformStyle: StyleAPI.get("ButtonStyle");
 
     // Deprecated, TODO remove
     property alias style: button.platformStyle

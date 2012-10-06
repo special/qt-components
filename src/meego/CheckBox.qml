@@ -42,11 +42,12 @@ import QtQuick 1.1
 import "." 1.0
 
 import "UIConstants.js" as UI
+import "style.js" as StyleAPI
 
 ImplicitSizeItem {
     id: checkbox
 
-    property Style platformStyle: CheckBoxStyle{}
+    property QtObject platformStyle: StyleAPI.get("CheckBoxStyle");
     property alias platformMouseAnchors: mouseArea.anchors
 
     //Deprecated, TODO Remove this on w13

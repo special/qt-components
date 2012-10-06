@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Popup {
     id: root
@@ -57,7 +58,7 @@ Popup {
     */
 
     // platformStyle API
-    property Style platformStyle: MenuStyle{}
+    property QtObject platformStyle: StyleAPI.get("MenuStyle");
     property alias style: root.platformStyle // Deprecated
     property alias platformTitle: titleBar.children
     property alias title: titleBar.children // Deprecated

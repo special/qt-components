@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 Window {
     id: window
@@ -48,7 +49,7 @@ Window {
     property bool showToolBar: true
     property variant initialPage
     property alias pageStack: contentArea
-    property Style platformStyle: PageStackWindowStyle{}
+    property QtObject platformStyle: StyleAPI.get("PageStackWindowStyle");
     property alias platformToolBarHeight: toolBar.height // read-only
 
     //Deprecated, TODO Remove this on w13

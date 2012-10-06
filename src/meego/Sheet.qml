@@ -40,6 +40,7 @@
 
 import QtQuick 1.1
 import "." 1.0
+import "style.js" as StyleAPI
 
 MouseArea {
     id: root
@@ -65,7 +66,7 @@ MouseArea {
     signal accepted
     signal rejected
 
-    property QtObject platformStyle: SheetStyle {}
+    property QtObject platformStyle: StyleAPI.get("SheetStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: root.platformStyle

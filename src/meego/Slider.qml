@@ -41,11 +41,12 @@
 import QtQuick 1.1
 import "." 1.0
 import "UIConstants.js" as UI
+import "style.js" as StyleAPI
 
 SliderTemplate {
     id: slider
 
-    property Style platformStyle: SliderStyle{}
+    property QtObject platformStyle: StyleAPI.get("SliderStyle");
 
     //Deprecated, TODO Remove this on w13
     property alias style: slider.platformStyle
